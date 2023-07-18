@@ -1,11 +1,11 @@
 const server = require("./src/server");
 const { conn } = require("./src/db.js");
-const port = process.env.PORT || 80;;
+const PORT = 3001;
 
 conn.sync({ alter:true })
     .then(() => {
-        server.listen(port, "0.0.0.0", () => {
-            console.log(`Server listening on port ${port}`);
+        server.listen(PORT, () => {
+            console.log(`Server listening on port ${PORT}`);
         });
     })
     .catch((error) => console.error(error));
